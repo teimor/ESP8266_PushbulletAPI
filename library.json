@@ -1,7 +1,7 @@
 {
     "name": "PushbulletAPI",
     "keywords": "pushbullet, push, notifications",
-    "description": "ESP8266 Library for Pushbullet push notifaction messages. Using Secure connection. ",
+    "description": "ESP8266 Library for Pushbullet push notification messages. Using Secure connection. ",
     "repository":
     {
       "type": "git",
