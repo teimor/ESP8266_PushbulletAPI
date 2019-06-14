@@ -260,10 +260,7 @@ void PushbulletAPI::debugResponse()
  * @param t_msgType : 0 - Info, 1 - Debug, 2 - Warning, 3 - Error
  */
 void PushbulletAPI::serialPrint(const String t_message, const int t_msgType)
-{
-    time_t now = time(0);
-    
-    
+{   
     switch (t_msgType)
     {
     case 1: // Debug
@@ -278,8 +275,6 @@ void PushbulletAPI::serialPrint(const String t_message, const int t_msgType)
         Serial.println("[ERROR] PushbulletAPI : " + t_message);
         break;
     default:
-         time ( &now );
-        Serial.println(asctime(localtime(&now)));
         Serial.println("[INFO] PushbulletAPI : " + t_message);
         break;
     }
