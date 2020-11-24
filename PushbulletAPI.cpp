@@ -235,6 +235,28 @@ void PushbulletAPI::pushNotifcationUrl(String t_title, String t_body, String t_u
 }
 
 /**
+ * @brief push regular/note notifaction message to pushbullet client.
+ *
+ * @param t_title : message title
+ * @param t_body  : message body
+ * @param t_email : receiver email
+ */
+void PushbulletAPI::pushNotifcationEmail(String t_title, String t_body, String t_email)
+{
+    // check if connection is availble.
+    if( connectionStatus() == false )
+    {
+        if(openConnection() == false)
+        return;
+    }
+
+    String messagebody = {"{\"body\":\"" + t_body + "\",\"email\":\"" + t_email + "\",\"title\":\"" + t_title + "\",\"type\":\"note\"}"};
+    sendPushbulletHttpRequest(messagebody);
+    debugResponse();
+    closeConnection();
+}
+
+/**
  * @brief if DEBUG is enabled, will print the server response.
  * 
  */

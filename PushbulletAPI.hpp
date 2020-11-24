@@ -16,6 +16,7 @@ class PushbulletAPI{
 	  bool connectionStatus();
 	  void pushNotifcation(String t_title, String t_body);
 	  void pushNotifcationUrl(String t_title, String t_body, String t_url);
+	  void pushNotifcationEmail(String t_title, String t_body, String t_email);
 
 	  const String PUSHBULLET_HOST = "api.pushbullet.com";
 	  const String PUSHBULLET_PUSH_URL = "/v2/pushes";
